@@ -46,7 +46,7 @@ class Login extends CI_Controller {
 		
 		$this->session->set_userdata($session_data);
 
-		$update = $this->User_Model->store('users', ['last_login' => date('Y-m-d H:i:s')]);
+		$update = $this->User_Model->store('users', ['last_login' => date('Y-m-d H:i:s')], ['id' => $user_data->id]);
 
 		redirect('screensaver');
 	}
